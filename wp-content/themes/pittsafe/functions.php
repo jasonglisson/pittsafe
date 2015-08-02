@@ -179,6 +179,17 @@ if ( ! function_exists( 'charitas_redirect_after_theme_activation' ) ) {
 
 }
 
+/*-----------------------------------------------------------------------------------*/
+/*	Adding 
+/*-----------------------------------------------------------------------------------*/
+
+if (!is_admin()) {
+    wp_enqueue_script('slick_script', get_template_directory_uri() . '/slick/slick.js', array(), false, true);
+    //wp_enqueue_script('custom_scripts', get_template_directory_uri() . '/js/scripts.js', array(), false, true);
+    wp_enqueue_style('slick_style', get_template_directory_uri() . '/slick/slick.css');
+    wp_enqueue_style('slick_theme', get_template_directory_uri() . '/slick/slick-theme.css');  
+}    
+
 
 /*-----------------------------------------------------------------------------------*/
 /*	Flush Rewrite after the theme is activated

@@ -11,7 +11,20 @@ jQuery(document).ready(function(){
 		// Target your .container, .wrapper, .post, etc.
 		jQuery(".WPlookLatestNews .image, iframe").fitVids();
 	});
-
+	
+	/* Slick slide */
+	jQuery('.slides').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		fade: true,
+		cssEase: 'linear',
+		autoplay: true,
+		pauseOnHover: false,
+		autoplaySpeed: 7000,
+		infinite: true,
+		dots: true
+	});
 
 	/* Flex Slider Teaser */
 	jQuery(window).load(function() {
