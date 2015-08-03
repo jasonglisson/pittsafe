@@ -65,7 +65,7 @@
 	<?php wp_reset_postdata(); ?>
 	</div>	
 		<div class="clear"></div>
-		<div class="grid_6 block first-home-widget-area">
+		<div class="grid_4 block first-home-widget-area">
 			<div class="widget-title">
 				<h3>Events</h3>
 				<div class="viewall fright">
@@ -82,14 +82,30 @@
 		    	<?php the_date('F d, Y', '<h4>', '</h4>'); ?>
 			<?php endwhile; ?>			
 		</div>
-		<div class="grid_10 block second-home-widget-area">
+		<div class="grid_12 block second-home-widget-area">
 			<div class="widget-title">
-				<h3>Events</h3>
+				<h3>Projects</h3>
 				<div class="viewall fright">
-					<a href="/events/" class="radius" title="View all Events">VIEW ALL</a>
+					<div class="flex-prev flex-nav">Previous</div><div class="flex-next flex-nav">Next</div><a href="/projects/" class="radius" title="View all Projects">VIEW ALL</a>
 				</div>
 				<div class="clear"></div>
-			</div>			
+			</div>		
+			<div class="grid_8">	
+				<?php
+				$args = array( 'post_type' => 'project', 'posts_per_page' => 1 );
+				$loop = new WP_Query( $args );
+				while ( $loop->have_posts() ) : $loop->the_post();?>
+				<?php //print_r($loop); ?>
+				<h2><a href="<?php echo get_permalink();?>"><?php the_title();?></a></h2>
+				<div class="entry-content">
+				<?php the_excerpt(); ?>
+				</div>
+				<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink();?>">Read More <i class="icon-angle-right"></i></a></div></div>
+				<?php endwhile; ?>		
+			</div>	
+			<div class="grid_8">	
+				test
+			</div>	
 		</div>
 		<div class="grid_16 block second-home-widget-area">
 			<?php $post = $wp_query->post; ?>

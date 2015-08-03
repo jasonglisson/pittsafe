@@ -2263,8 +2263,8 @@ aside ul {
   color: #a2a2ad;
   border: 1px solid #a2a2ad;
   text-decoration: none;
-  padding: 0px 5px;
-  margin: 10px 0 0 0;
+  padding: 3px 5px;
+  margin: 6px 0 0 0;
   display: inline-block; }
 
 .widget-title .viewall a:hover {
@@ -2689,6 +2689,37 @@ aside ul {
   bottom: none;
   background: #fff;
   display: block; }
+
+.flex-direction-nav {
+  width: 70px;
+  position: absolute;
+  top: 6px;
+  right: 0px;
+  bottom: none;
+  background: #fff;
+  display: block; }
+
+.flex-nav {
+  width: 40px;
+  height: 25px;
+  display: inline-block;
+  text-indent: -9999px;
+  margin: 0 3px;
+  transition: 0.2s all;
+  position: relative;
+  top: -3px;
+  border-radius: 2px; }
+
+.flex-prev {
+  background: #3c51ea url('../images/bg_direction_nav_small.png') no-repeat 10px 0px; }
+  .flex-prev:hover {
+    background: #666 url('../images/bg_direction_nav_small.png') no-repeat 10px 0px; }
+
+.flex-next {
+  background: #3c51ea url('../images/bg_direction_nav_small.png') no-repeat -22px 0px;
+  margin: 0 8px 0 3px; }
+  .flex-next:hover {
+    background: #666 url('../images/bg_direction_nav_small.png') no-repeat -22px 0px; }
 
 .latestnews-body .flex-direction-nav li {
   width: 35px;

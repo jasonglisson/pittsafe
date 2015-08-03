@@ -108,17 +108,7 @@
 			<div id="sticky_navigation">
 				<div class="container_16">
 					<hgroup class="fleft grid_5">
-							<h1 id="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo('description'); ?>" rel="home">
-								<?php
-								if ( ot_get_option('charitas_logo') != ''){?>
-										<img src="<?php echo esc_html(ot_get_option('charitas_logo')); ?>">
-									<?php } else {
-										bloginfo('name');
-									}?>
-								</a>
-							</h1>
-								<h2 id="site-description"><?php bloginfo('description'); ?></h2>
+						<a href="/"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="90%"></a>
 					</hgroup>
 
 					<nav role="navigation" class="site-navigation main-navigation grid_11" id="site-navigation">
