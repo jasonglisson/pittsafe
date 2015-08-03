@@ -188,6 +188,7 @@ if (!is_admin()) {
     //wp_enqueue_script('custom_scripts', get_template_directory_uri() . '/js/scripts.js', array(), false, true);
     wp_enqueue_style('slick_style', get_template_directory_uri() . '/slick/slick.css');
     wp_enqueue_style('slick_theme', get_template_directory_uri() . '/slick/slick-theme.css');  
+    wp_enqueue_style('pittsafe_styles', get_template_directory_uri() . '/css/pittsafe.css');     
 }    
 
 
@@ -237,3 +238,9 @@ $custom_header = array(
 	'admin-preview-callback' => '',
 );
 add_theme_support( 'custom-header', $custom_header );
+
+
+function new_excerpt_more( $more ) {
+	return '...<a href="' . get_permalink() .'">Read more</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

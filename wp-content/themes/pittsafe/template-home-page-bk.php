@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Home Page
+ * Template Name: Test Home Page
  *
  * @package WordPress
  * @subpackage Charitas Lite
