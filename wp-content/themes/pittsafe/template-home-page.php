@@ -108,10 +108,37 @@
 			</div>	
 		</div>
 		<div class="grid_16 block second-home-widget-area">
-			<?php $post = $wp_query->post; ?>
-			<h3><?php echo the_field('about_text_header', $post->ID);?></h3>
-			<?php echo the_field('about_text', $post->ID);?>			
+			<div class="home-mission">
+				<?php $post = $wp_query->post; ?>
+				<h3><?php echo the_field('about_text_header', $post->ID);?></h3>
+				<?php echo the_field('about_text', $post->ID);?>		
+			</div>		
 		</div>	
+		<div class="clear"></div>
+		<div class="grid_6 block second-home-widget-area">
+			<div class="widget-title">
+				<h3>Galleries</h3>
+				<div class="viewall fright">
+					<a href="/galleries/" class="radius" title="View all Images">VIEW ALL</a>
+				</div>
+				<div class="clear"></div>
+			</div>			
+		</div>
+		<div class="grid_5 block second-home-widget-area">
+			<div class="widget-title">
+				<h3>Videos</h3>
+				<div class="clear"></div>
+			</div>			
+		</div>
+		<div class="grid_5 block second-home-widget-area">
+			<div class="widget-title">
+				<h3>Documents</h3>
+				<div class="viewall fright">
+					<a href="/documents/" class="radius" title="View all News">VIEW ALL</a>
+				</div>
+				<div class="clear"></div>
+			</div>			
+		</div>		
 		<div class="clear"></div>		
 	</div>
 </div>		
