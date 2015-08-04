@@ -241,6 +241,6 @@ add_theme_support( 'custom-header', $custom_header );
 
 
 function new_excerpt_more( $more ) {
-	return '...<a href="' . get_permalink() .'">Read more</a>';
+	return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');

@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
 	jQuery('.slides').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		arrows: true,
+		arrows: false,
 		fade: true,
 		cssEase: 'linear',
 		autoplay: true,
@@ -26,65 +26,23 @@ jQuery(document).ready(function(){
 		dots: true
 	});
 
-	/* Flex Slider Teaser */
-	jQuery(window).load(function() {
-		jQuery('.flexslider').flexslider({
-			animation: "fade",
-			animationLoop: true,
-			pauseOnAction: true,
-			pauseOnHover: true,
-			controlNav: "thumbnails",
-			start: function(slider) {
-				jQuery( '.flexslider' ).removeClass('loading');
-			}
-		});
+	jQuery('.project-slides').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		fade: true,
+		cssEase: 'linear',
+		autoplay: false,
+		infinite: true,
+		dots: false
 	});
 
-	/* Featured News Slider */
-	jQuery(window).ready(function() {
-		jQuery('.flexslider-news').flexslider({
-		controlNav: false,
-		directionNav:true,
-		animationLoop: true,
-		animation: "fade",
-		useCSS: true,
-		smoothHeight: true,
-		slideshow: false,
-		slideshowSpeed:3000,		
-		pauseOnAction: true,
-		touch: true,
-		animationSpeed: 900,
-		start: function(slider) {
-				jQuery( '.flexslider-news' ).removeClass('loading');
-			}
-		});
+	jQuery('.flex-prev').click(function(){
+		jQuery('.home .slick-prev')[0].click();
+	}); 
+	jQuery('.flex-next').click(function(){
+		jQuery('.home .slick-next')[0].click();
 	});
-
-	/* Gallery Posts Slider */
-	jQuery(window).ready(function() {
-		
-		jQuery('#flexslider-gallery-carousel').flexslider({
-			animation: "slide",
-			controlNav: false,
-			animationLoop: false,
-			slideshow: true,
-			itemWidth: 150,
-			asNavFor: '.flexslider-gallery'
-		});
-
-		jQuery('.flexslider-gallery').flexslider({
-			animation: "fade",
-			controlNav: false,
-			animationLoop: false,
-			slideshow: false,
-			sync: "#flexslider-gallery-carousel",
-			start: function(slider) {
-				jQuery( '.flexslider-gallery' ).removeClass('loading');
-			}
-		});
-
-	});
-
 
 	/* Stick the menu */   
 	jQuery(function() {

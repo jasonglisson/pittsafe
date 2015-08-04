@@ -37,10 +37,6 @@
 				
 				<?php endwhile; ?>
 			</ul>
-			<div class="click-btn">
-				<div class="home-prev-photo btn">‹</div>							  
-				<div class="home-next-photo btn">›</div>							  
-			</div>
 		<?php endif; ?>
 	</div>	
 		<div class="grid_6 block second-home-widget-area">
@@ -60,6 +56,7 @@
     	<?php the_date('F d, Y', '<h4>', '</h4>'); ?>
 	    <div class="entry-content">
 	    	<?php the_excerpt(); ?>
+	    	<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink();?>">Read More <i class="icon-angle-right"></i></a></div></div>
 	    </div>
 	<?php endwhile; ?>	
 	<?php wp_reset_postdata(); ?>
@@ -89,23 +86,28 @@
 					<div class="flex-prev flex-nav">Previous</div><div class="flex-next flex-nav">Next</div><a href="/projects/" class="radius" title="View all Projects">VIEW ALL</a>
 				</div>
 				<div class="clear"></div>
-			</div>		
-			<div class="grid_8">	
-				<?php
-				$args = array( 'post_type' => 'project', 'posts_per_page' => 1 );
-				$loop = new WP_Query( $args );
-				while ( $loop->have_posts() ) : $loop->the_post();?>
-				<?php //print_r($loop); ?>
-				<h2><a href="<?php echo get_permalink();?>"><?php the_title();?></a></h2>
-				<div class="entry-content">
-				<?php the_excerpt(); ?>
-				</div>
-				<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink();?>">Read More <i class="icon-angle-right"></i></a></div></div>
-				<?php endwhile; ?>		
-			</div>	
-			<div class="grid_8">	
-				test
-			</div>	
+			</div>			
+				<ul class="project-slides">
+					<?php
+					$post = $wp_query->post;
+					$args = array( 'post_type' => 'project', 'posts_per_page' => 10 );
+					$loop = new WP_Query( $args );
+					while ( $loop->have_posts() ) : $loop->the_post();?>
+					<?php //print_r($loop); ?>
+					<li class="project-item">					
+						<div class="grid_10">
+								<h2><a href="<?php echo get_permalink();?>"><?php the_title();?></a></h2>
+								<div class="entry-content">
+								<?php the_excerpt(); ?>
+								</div>
+								<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink();?>">Read More <i class="icon-angle-right"></i></a></div></div>
+						</div>		
+						<div class="grid_6">	
+							<img src="<?php echo the_field('project_image', $post->ID);?>" width="100%">
+						</div>	
+					</li>	
+					<?php endwhile; ?>	
+				</ul>		
 		</div>
 		<div class="grid_16 block second-home-widget-area">
 			<div class="home-mission">
@@ -122,6 +124,16 @@
 					<a href="/galleries/" class="radius" title="View all Images">VIEW ALL</a>
 				</div>
 				<div class="clear"></div>
+				<div class="home-gallery">
+					<?php
+					$post = $wp_query->post;
+					$args = array( 'post_type' => 'gallery', 'posts_per_page' => 4 );
+					$loop = new WP_Query( $args );
+					while ( $loop->have_posts() ) : $loop->the_post();?>					
+							<?php $images = get_field('gallery', $post->ID); ?>
+						<a href="<?php echo get_permalink();?>" class="gallery-item"><img src="<?php echo $images[0]['sizes']['thumbnail'];?>" width="100%"></a>
+					<?php endwhile; ?>	
+				</div>			
 			</div>			
 		</div>
 		<div class="grid_5 block second-home-widget-area">

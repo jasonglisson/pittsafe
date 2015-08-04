@@ -1,19 +1,6 @@
 /* Default Styles */
 @import url(http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic|Archivo+Narrow:400,400italic,700italic,700&subset=latin,cyrillic-ext,greek-ext,vietnamese,greek,latin-ext,cyrillic);
 
-/* Homepage */
-.home-mission {
-	background:#ddd;
-	border:1px solid #7a7a7a;
-	border-radius:2px;
-	padding:10px 20px;
-	text-align: center;
-	font-size: .95rem;	
-	h3 {
-		font-size: 1.5rem;
-	}
-}
-
 
 /* 
 	font-family: 'Arimo', sans-serif;
@@ -3489,6 +3476,32 @@ a.follow{
 i span { margin-left: 6px;}
 
 
+/* Homepage */
+.home-mission {
+	background:#ddd;
+	border:1px solid #7a7a7a;
+	border-radius:2px;
+	padding:10px 20px;
+	text-align: center;
+	font-size: .95rem;	
+	h3 {
+		font-size: 1.5rem;
+	}
+}
+
+.project-slides {
+	margin:0;
+}
+
+.home-gallery {
+	padding-top:15px;
+	.gallery-item {
+		display: block;
+	    float: left;
+	    width: 46%;
+	    padding: 5px;
+	}
+}
 
 /*	----------------------------------------------------------
 	Responsive Structure
