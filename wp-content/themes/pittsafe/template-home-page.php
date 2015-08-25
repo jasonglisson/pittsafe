@@ -117,30 +117,40 @@
 			</div>		
 		</div>	
 		<div class="clear"></div>
-		<div class="grid_6 block second-home-widget-area">
+		<div class="grid_5 block second-home-widget-area">
 			<div class="widget-title">
 				<h3>Galleries</h3>
 				<div class="viewall fright">
 					<a href="/galleries/" class="radius" title="View all Images">VIEW ALL</a>
 				</div>
-				<div class="clear"></div>
-				<div class="home-gallery">
-					<?php
-					$post = $wp_query->post;
-					$args = array( 'post_type' => 'gallery', 'posts_per_page' => 4 );
-					$loop = new WP_Query( $args );
-					while ( $loop->have_posts() ) : $loop->the_post();?>					
-							<?php $images = get_field('gallery', $post->ID); ?>
-						<a href="<?php echo get_permalink();?>" class="gallery-item"><img src="<?php echo $images[0]['sizes']['thumbnail'];?>" width="100%"></a>
-					<?php endwhile; ?>	
-				</div>			
-			</div>			
+				<div class="clear"></div>		
+			</div>		
+			<div class="home-gallery">
+				<?php
+				$post = $wp_query->post;
+				$args = array( 'post_type' => 'gallery', 'posts_per_page' => 4 );
+				$loop = new WP_Query( $args );
+				while ( $loop->have_posts() ) : $loop->the_post();?>					
+						<?php $images = get_field('gallery', $post->ID); ?>
+					<a href="<?php echo get_permalink();?>" class="gallery-item"><img src="<?php echo $images[0]['sizes']['thumbnail'];?>" width="100%" alt="<?php echo $post->post_title; ?>"></a>
+				<?php endwhile; ?>	
+			</div>					
 		</div>
-		<div class="grid_5 block second-home-widget-area">
+		<div class="grid_6 block second-home-widget-area">
 			<div class="widget-title">
 				<h3>Videos</h3>
 				<div class="clear"></div>
-			</div>			
+			</div>		
+			<div class="home-gallery">
+				<?php
+				$post = $wp_query->post;
+				$args = array( 'post_type' => 'video', 'posts_per_page' => 4 );
+				$loop = new WP_Query( $args );
+				while ( $loop->have_posts() ) : $loop->the_post();?>					
+						<?php $video = get_field('video_url', $post->ID); ?>
+					<a href="<?php echo get_permalink();?>" class="gallery-item"><img src="<?php echo $video['thumbnail']; ?>" width="100%" alt="<?php echo $post->post_title; ?>"></a>
+				<?php endwhile; ?>	
+			</div>									
 		</div>
 		<div class="grid_5 block second-home-widget-area">
 			<div class="widget-title">
@@ -148,10 +158,21 @@
 				<div class="viewall fright">
 					<a href="/documents/" class="radius" title="View all News">VIEW ALL</a>
 				</div>
-				<div class="clear"></div>
-			</div>			
+				<div class="clear"></div>				
+			</div>	
+			<div class="">
+				<?php
+				$post = $wp_query->post;
+				$args = array( 'post_type' => 'document', 'posts_per_page' => 3 );
+				$loop = new WP_Query( $args );
+				while ( $loop->have_posts() ) : $loop->the_post();?>					
+						<?php $video = get_field('document', $post->ID); ?>
+					<a href="<?php echo get_permalink();?>" class=""><h3><?php echo $post->post_title; ?></h3></a>
+					<?php echo the_excerpt();?>
+				<?php endwhile; ?>	
+			</div>						
 		</div>		
-		<div class="clear"></div>		
+		<div class="clear"></div>	
 	</div>
 </div>		
 
