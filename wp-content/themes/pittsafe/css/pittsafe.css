@@ -813,12 +813,13 @@ embed, iframe, object, video {
   margin-top: 164px; }
 
 .teaser-page-list #rootline {
-  margin-top: 64px; }
+  margin: 0 0 15px 0; }
 
 #rootline {
-  font-size: 14px;
-  text-align: right;
+  font-size: 15px;
   color: #fff; }
+  #rootline .current {
+    font-size: 30px; }
 
 #rootline a {
   color: #fff;
@@ -1395,6 +1396,16 @@ progress::-moz-progress-bar {
   -ms-animation-duration: 1s;
   -o-animation-duration: 1s;
   animation-duration: 1s; }
+
+/*	----------------------------------------------------------
+	Projects
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+.page-template-template-projects .project-item {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: inline-block;
+  padding: 10px 0; }
 
 /*	----------------------------------------------------------
 	Press

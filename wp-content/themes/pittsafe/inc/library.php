@@ -111,7 +111,7 @@ if ( ! function_exists( 'charitas_breadcrumbs' ) ) {
 		$delimiter 	= '>'; // delimiter between crumbs
 		
 		$showCurrent 	= '1'; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-		$before 		= '<span class="current">'; // tag before the current crumb
+		$before 		= '<br><span class="current">'; // tag before the current crumb
 		$after 		= '</span>'; // tag after the current crumb
 		
 		$text['home'] = __('Home','charitas'); // text for the 'Home' link
@@ -130,7 +130,7 @@ if ( ! function_exists( 'charitas_breadcrumbs' ) ) {
 
   		} else {
 
-			echo '<a href="' . $homeLink . '">' . $text['home'] . '</a> ' . $delimiter . ' ';
+			//echo '<a href="' . $homeLink . '">' . $text['home'] . '</a> ' . $delimiter . ' ';
 
 			if ( is_category() ) {
 				global $wp_query;

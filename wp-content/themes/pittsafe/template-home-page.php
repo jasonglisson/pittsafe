@@ -103,7 +103,7 @@
 								<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink();?>">Read More <i class="icon-angle-right"></i></a></div></div>
 						</div>		
 						<div class="grid_6">	
-							<img src="<?php echo the_field('project_image', $post->ID);?>" width="100%">
+							<a href="<?php echo get_permalink();?>"><img src="<?php echo the_field('project_image', $post->ID);?>" width="100%"></a>
 						</div>	
 					</li>	
 					<?php endwhile; ?>	

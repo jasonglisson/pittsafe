@@ -15,10 +15,7 @@
 	<div class="item teaser-page-list">
 	
 		<div class="container_16">
-			<aside class="grid_10">
-				<h1 class="page-title"><?php the_title() ?></h1>
-			</aside>
-			
+			<br>
 			<?php if ( ot_get_option('charitas_breadcrumbs') != "off") { ?>
 				<div class="grid_6">
 					<div id="rootline">
