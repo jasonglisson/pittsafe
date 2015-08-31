@@ -1705,6 +1705,17 @@ display: block;
 	}
 }
 
+.page-template-template-media {
+	ul {
+		margin:0;
+		.gallery-list {
+			float: left;
+			padding: 15px;
+			list-style: none;
+			list-style-type: none;
+		}
+	}
+}
 
 /*	----------------------------------------------------------
 	Press

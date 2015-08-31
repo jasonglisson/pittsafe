@@ -1407,6 +1407,14 @@ progress::-moz-progress-bar {
   display: inline-block;
   padding: 10px 0; }
 
+.page-template-template-media ul {
+  margin: 0; }
+  .page-template-template-media ul .gallery-list {
+    float: left;
+    padding: 15px;
+    list-style: none;
+    list-style-type: none; }
+
 /*	----------------------------------------------------------
 	Press
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
