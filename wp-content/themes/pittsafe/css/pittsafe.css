@@ -1416,6 +1416,40 @@ progress::-moz-progress-bar {
     list-style-type: none; }
 
 /*	----------------------------------------------------------
+	News Page
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+.news-item {
+  width: 100%;
+  padding: 25px 0;
+  float: left; }
+
+.pager-link {
+  display: block;
+  margin-bottom: 25px; }
+  .pager-link a {
+    padding: 20px;
+    float: right;
+    width: 100%;
+    background: #ddd;
+    transition: 0.2s all; }
+    .pager-link a:hover {
+      background: #c2c1c1; }
+
+.pager-nav {
+  float: left;
+  width: 100%; }
+
+.next-posts-link {
+  float: right; }
+  .next-posts-link a {
+    text-align: left; }
+
+.prev-posts-link {
+  float: right; }
+  .prev-posts-link a {
+    text-align: right; }
+
+/*	----------------------------------------------------------
 	Press
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 .entry-meta-press {

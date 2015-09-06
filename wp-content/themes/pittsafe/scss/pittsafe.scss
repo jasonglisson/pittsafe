@@ -1718,6 +1718,50 @@ display: block;
 }
 
 /*	----------------------------------------------------------
+	News Page
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.news-item {
+	width:100%;
+	padding:25px 0;
+	float: left;
+}
+
+.pager-link {
+    display: block;
+    margin-bottom:25px;
+    a {
+	    padding: 20px;
+	    float:right;
+	    width: 100%;
+	    background: #ddd;
+	    transition:.2s all;
+	    &:hover {
+	    	background: #c2c1c1;		    
+	    }
+    }	
+}
+
+.pager-nav {
+    float: left;
+    width: 100%;
+}
+
+.next-posts-link {
+	float:right;
+	a {
+		text-align: left;
+	}
+}
+
+.prev-posts-link {
+	float:right;
+	a {
+		text-align: right;
+	}
+}
+
+/*	----------------------------------------------------------
 	Press
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 

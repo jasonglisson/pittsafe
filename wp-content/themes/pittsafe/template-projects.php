@@ -25,7 +25,7 @@
 		<div class="inner">
 					<?php
 					$post = $wp_query->post;
-					$args = array( 'post_type' => 'project');
+					$args = array( 'post_type' => 'project', 'posts_per_page' => 100,);
 					$loop = new WP_Query( $args );
 					while ( $loop->have_posts() ) : $loop->the_post();?>
 					<?php //print_r($loop); ?>

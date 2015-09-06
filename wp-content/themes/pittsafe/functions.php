@@ -244,3 +244,28 @@ function new_excerpt_more( $more ) {
 	return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+/*-----------------------------------------------------------
+	Slug Rewrite
+-----------------------------------------------------------*/
+
+add_action('init', 'custom_rewrite_basic');
+function custom_rewrite_basic() {
+    global $wp_post_types;
+    foreach ($wp_post_types as $wp_post_type) {
+        if ($wp_post_type->_builtin) continue;
+        if (!$wp_post_type->has_archive && isset($wp_post_type->rewrite) && isset($wp_post_type->rewrite['with_front']) && !$wp_post_type->rewrite['with_front']) {
+            $slug = (isset($wp_post_type->rewrite['slug']) ? $wp_post_type->rewrite['slug'] : $wp_post_type->name);
+            $page = get_page_by_slug($slug);
+            if ($page) add_rewrite_rule('^' .$slug .'/page/([0-9]+)/?', 'index.php?page_id=' .$page->ID .'&paged=$matches[1]', 'top');
+        }
+    }
+}
+
+function get_page_by_slug($page_slug, $output = OBJECT, $post_type = 'page' ) {
+    global $wpdb;
+
+    $page = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_name = %s AND post_type= %s AND post_status = 'publish'", $page_slug, $post_type ) );
+
+    return ($page ? get_post($page, $output) : NULL);
+}
