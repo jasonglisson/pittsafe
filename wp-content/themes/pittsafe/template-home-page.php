@@ -41,27 +41,15 @@
 	</div>	
 		<div class="grid_6 block second-home-widget-area">
 		<div class="widget-title">
-			<h3>Recent News</h3>
-			<div class="viewall fright">
-				<a href="/news/" class="radius" title="View all News">VIEW ALL</a>
-			</div>
+			<h3>Upcoming Events</h3>
 			<div class="clear"></div>
 		</div>
-	<?php
-	$args = array( 'post_type' => 'news', 'posts_per_page' => 1 );
-    $loop = new WP_Query( $args );
-	while ( $loop->have_posts() ) : $loop->the_post();?>
-	<?php //print_r($loop); ?>
-    	<h2><a href="<?php echo get_permalink();?>"><?php the_title();?></a></h2>
-    	<?php the_date('F d, Y', '<h4>', '</h4>'); ?>
 	    <div class="entry-content">
-	    	<?php the_excerpt(); ?>
-	    	<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink();?>">Read More <i class="icon-angle-right"></i></a></div></div>
+			<iframe src="http://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=pittsafe%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="100%" height="350" frameborder="0" scrolling="no"></iframe>
 	    </div>
-	<?php endwhile; ?>	
-	<?php wp_reset_postdata(); ?>
 	</div>	
 		<div class="clear"></div>
+<!--
 		<div class="grid_4 block first-home-widget-area">
 			<div class="widget-title">
 				<h3>Events</h3>
@@ -79,7 +67,8 @@
 		    	<?php the_date('F d, Y', '<h4>', '</h4>'); ?>
 			<?php endwhile; ?>			
 		</div>
-		<div class="grid_12 block second-home-widget-area">
+-->
+		<div class="grid_16 block second-home-widget-area">
 			<div class="widget-title">
 				<h3>Projects</h3>
 				<div class="viewall fright">
@@ -95,14 +84,14 @@
 					while ( $loop->have_posts() ) : $loop->the_post();?>
 					<?php //print_r($loop); ?>
 					<li class="project-item">					
-						<div class="grid_10">
+						<div class="grid_12">
 								<h2><a href="<?php echo get_permalink();?>"><?php the_title();?></a></h2>
 								<div class="entry-content">
 								<?php the_excerpt(); ?>
 								</div>
 								<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink();?>">Read More <i class="icon-angle-right"></i></a></div></div>
 						</div>		
-						<div class="grid_6">	
+						<div class="grid_4">	
 							<a href="<?php echo get_permalink();?>"><img src="<?php echo the_field('project_image', $post->ID);?>" width="100%"></a>
 						</div>	
 					</li>	
