@@ -33,7 +33,6 @@
 		<div id="primary" class="grid_11 suffix_1">
 			<?php get_template_part( 'content', get_post_format() ); ?>
 		</div><!-- #content -->
-
 		<?php get_sidebar(); ?>
 		<div class="clear"></div>
 	</div><!-- #primary -->

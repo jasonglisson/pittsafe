@@ -1407,6 +1407,9 @@ progress::-moz-progress-bar {
   display: inline-block;
   padding: 10px 0; }
 
+/*	----------------------------------------------------------
+	Media
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 .page-template-template-media ul {
   margin: 0; }
   .page-template-template-media ul .gallery-list {
@@ -1414,6 +1417,17 @@ progress::-moz-progress-bar {
     padding: 15px;
     list-style: none;
     list-style-type: none; }
+
+/*	----------------------------------------------------------
+	Events
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+.page-template-template-events .project-item {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+  margin-bottom: 15px; }
 
 /*	----------------------------------------------------------
 	News Page

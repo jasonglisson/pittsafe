@@ -1705,6 +1705,10 @@ display: block;
 	}
 }
 
+/*	----------------------------------------------------------
+	Media
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
 .page-template-template-media {
 	ul {
 		margin:0;
@@ -1716,6 +1720,22 @@ display: block;
 		}
 	}
 }
+
+/*	----------------------------------------------------------
+	Events
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.page-template-template-events {
+	.project-item {
+	    width: 100%;
+	    height: auto;
+	    position: relative;
+	    display: inline-block;
+	    padding:10px 0;
+	    margin-bottom:15px;
+	}
+}
+
 
 /*	----------------------------------------------------------
 	News Page
