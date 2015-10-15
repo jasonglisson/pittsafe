@@ -1417,6 +1417,33 @@ progress::-moz-progress-bar {
     padding: 15px;
     list-style: none;
     list-style-type: none; }
+    .page-template-template-media ul .gallery-list .overlay {
+      width: 87%;
+      text-align: center;
+      height: 83%;
+      background: rgba(0, 0, 0, 0.28);
+      position: absolute; }
+      .page-template-template-media ul .gallery-list .overlay span {
+        color: #fff;
+        display: block;
+        position: absolute;
+        font-weight: bold;
+        width: 100%;
+        top: 40%; }
+
+.videos ul .gallery-list .overlay {
+  width: 87%;
+  text-align: center;
+  height: 83%;
+  background: rgba(0, 0, 0, 0.28);
+  position: absolute; }
+  .videos ul .gallery-list .overlay span {
+    color: #fff;
+    display: block;
+    position: absolute;
+    font-weight: bold;
+    width: 100%;
+    top: 40%; }
 
 /*	----------------------------------------------------------
 	Events

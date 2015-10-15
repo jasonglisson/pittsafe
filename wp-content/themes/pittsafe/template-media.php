@@ -31,7 +31,8 @@
 					$image = get_field('gallery' , $loop->post->ID);	
 					?>
 	                <li class="gallery-list grid_2">
-	                	<a href="<?php the_permalink() ?>"><?php echo the_title(); ?>
+	                	<a href="<?php the_permalink() ?>">
+		                	<div class="overlay"><span><?php echo the_title(); ?></span></div>
 	                    <img class="gallery-image-link fwrap" src="<?php echo $image[0]['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
 	                </li>
 				<?php endwhile; 
@@ -42,7 +43,7 @@
 		</div>		
 	</div>	
 	<br>
-	<div class="site-main container_16">
+	<div class="site-main videos container_16">
 		<h2>Videos</h2>
 		<div class="inner">
 		        <ul>
@@ -51,7 +52,8 @@
 				while ( $loop->have_posts() ) : $loop->the_post();
 					?>
 	                <li class="gallery-list grid_3">
-	                	<a href="<?php the_permalink() ?>"><?php echo the_title(); ?>
+	                	<a href="<?php the_permalink() ?>">
+		                	<div class="overlay"><span><?php echo the_title(); ?></span></div>
 						<?php $video = get_field('video_url', $post->ID); 
 						?>
 					<a href="<?php echo get_permalink();?>" class="gallery-item"><img src="<?php echo $video['thumbnail']; ?>" width="100%" alt="<?php echo $post->post_title; ?>"></a>
