@@ -245,6 +245,8 @@ function new_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+add_filter('widget_text', 'do_shortcode');
+
 /*-----------------------------------------------------------
 	Slug Rewrite
 -----------------------------------------------------------*/
@@ -269,3 +271,67 @@ function get_page_by_slug($page_slug, $output = OBJECT, $post_type = 'page' ) {
 
     return ($page ? get_post($page, $output) : NULL);
 }
+
+class Excerpt {
+
+  // Default length (by WordPress)
+  public static $length = 55;
+
+  // So you can call: my_excerpt('short');
+  public static $types = array(
+      'short' => 25,
+      'regular' => 55,
+      'long' => 100
+    );
+
+  /**
+   * Sets the length for the excerpt,
+   * then it adds the WP filter
+   * And automatically calls the_excerpt();
+   *
+   * @param string $new_length 
+   * @return void
+   * @author Baylor Rae'
+   */
+  public static function length($new_length = 55) {
+    Excerpt::$length = $new_length;
+
+    add_filter('excerpt_length', 'Excerpt::new_length');
+
+    Excerpt::output();
+  }
+
+  // Tells WP the new length
+  public static function new_length() {
+    if( isset(Excerpt::$types[Excerpt::$length]) )
+      return Excerpt::$types[Excerpt::$length];
+    else
+      return Excerpt::$length;
+  }
+
+  // Echoes out the excerpt
+  public static function output() {
+    the_excerpt();
+  }
+
+}
+
+// An alias to the class
+function my_excerpt($length = 55) {
+  Excerpt::length($length);
+}
+
+function wpb_set_post_views($postID) {
+    $count_key = 'wpb_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+//To keep the count accurate, lets get rid of prefetching
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);

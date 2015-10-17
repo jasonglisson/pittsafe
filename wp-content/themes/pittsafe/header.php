@@ -22,6 +22,7 @@
 	<div id="page">
 
 		<!-- Toolbar -->
+<!--
 		<div id="toolbar">
 			<div class="container_16">
 
@@ -102,6 +103,7 @@
 			</div>
 			<div class="clear"></div>
 		</div>
+-->
 		<!-- /#toolbar -->
 
 		<header id="branding" class="site-header" role="banner">

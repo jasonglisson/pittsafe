@@ -832,11 +832,11 @@ div.nav-menu > ul {
 .nav-menu li a {
 	color: #3b3b3d;
 	display: block;
-	font-size: 16px;
+	font-size: 19px;
 	font-family: 'Archivo Narrow', sans-serif;
 	text-transform: uppercase;
 	line-height: 1;
-	padding: 10px;
+	padding: 23px 12px;
 	text-decoration: none;
 }
 
@@ -2852,7 +2852,7 @@ margin-bottom: 0px;
     background: #fff;
     display: inline-block;
     padding-right: 12px;
-    color: #707070;
+    color: #3e5ff2;
     font-weight: bold;
 }
 
@@ -3620,6 +3620,13 @@ i span { margin-left: 6px;}
 
 .project-slides {
 	margin:0;
+	.project-item {
+		.entry-content {
+			p {
+				font-size:17px !important;
+			}			
+		}
+	}
 }
 
 .home-gallery {

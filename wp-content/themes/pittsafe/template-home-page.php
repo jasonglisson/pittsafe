@@ -42,10 +42,14 @@
 		<div class="grid_6 block second-home-widget-area">
 		<div class="widget-title">
 			<h3>Upcoming Events</h3>
+			<div class="viewall fright">
+				<a href="/events/" class="radius" title="View all Events">VIEW ALL</a>
+			</div>			
 			<div class="clear"></div>
 		</div>
 	    <div class="entry-content">
-			<iframe src="http://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=pittsafe%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="100%" height="350" frameborder="0" scrolling="no"></iframe>
+		    <?php echo do_shortcode('[gcal id="123"]'); ?>
+<!-- 			<iframe src="http://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=pittsafe%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="100%" height="350" frameborder="0" scrolling="no"></iframe> -->
 	    </div>
 	</div>	
 		<div class="clear"></div>
@@ -87,7 +91,7 @@
 						<div class="grid_12">
 								<h2><a href="<?php echo get_permalink();?>"><?php the_title();?></a></h2>
 								<div class="entry-content">
-								<?php the_excerpt(); ?>
+								<?php my_excerpt(85); ?>
 								</div>
 								<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink();?>">Read More <i class="icon-angle-right"></i></a></div></div>
 						</div>		
@@ -110,7 +114,7 @@
 			<div class="widget-title">
 				<h3>Galleries</h3>
 				<div class="viewall fright">
-					<a href="/galleries/" class="radius" title="View all Images">VIEW ALL</a>
+					<a href="/media/" class="radius" title="View all Images">VIEW ALL</a>
 				</div>
 				<div class="clear"></div>		
 			</div>		
