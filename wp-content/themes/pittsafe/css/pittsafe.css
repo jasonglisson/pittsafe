@@ -1454,6 +1454,12 @@ progress::-moz-progress-bar {
   display: none; }
 
 /*	----------------------------------------------------------
+	Single Video
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+.single-video .entry-meta-press {
+  display: none; }
+
+/*	----------------------------------------------------------
 	Events
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 .page-template-template-events .project-item {
