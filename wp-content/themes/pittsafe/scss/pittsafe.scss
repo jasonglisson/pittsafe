@@ -421,7 +421,7 @@ input[type=text] {
 	left:0;
 	background: #fff;
 	width: 100%;
-	z-index: 99999;
+	z-index: 100;
 	padding: 20px 0;
 	min-height: 60px;
 	border-bottom: 1px solid #f3f3f3;
@@ -1702,6 +1702,9 @@ display: block;
 	    position: relative;
 	    display: inline-block;
 	    padding:10px 0;
+	    .entry-content {
+			font-size: 17px !important;		    
+	    }
 	}
 }
 
@@ -1759,6 +1762,16 @@ display: block;
 }
 
 /*	----------------------------------------------------------
+	Single Gallery
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.single-gallery {
+	.entry-meta-press {
+		display: none;
+	}
+}
+
+/*	----------------------------------------------------------
 	Events
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
@@ -1770,6 +1783,12 @@ display: block;
 	    display: inline-block;
 	    padding:10px 0;
 	    margin-bottom:15px;
+	}
+}
+
+.page-template-template-events-php {
+	.gce-month-title {
+		font-size: 1.25rem;	
 	}
 }
 
@@ -3622,9 +3641,7 @@ i span { margin-left: 6px;}
 	margin:0;
 	.project-item {
 		.entry-content {
-			p {
-				font-size:17px !important;
-			}			
+			font-size:17px !important;		
 		}
 	}
 }

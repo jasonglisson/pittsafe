@@ -339,7 +339,7 @@ input[type=text] {
   left: 0;
   background: #fff;
   width: 100%;
-  z-index: 99999;
+  z-index: 100;
   padding: 20px 0;
   min-height: 60px;
   border-bottom: 1px solid #f3f3f3; }
@@ -1406,6 +1406,8 @@ progress::-moz-progress-bar {
   position: relative;
   display: inline-block;
   padding: 10px 0; }
+  .page-template-template-projects .project-item .entry-content {
+    font-size: 17px !important; }
 
 /*	----------------------------------------------------------
 	Media
@@ -1446,6 +1448,12 @@ progress::-moz-progress-bar {
     top: 40%; }
 
 /*	----------------------------------------------------------
+	Single Gallery
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+.single-gallery .entry-meta-press {
+  display: none; }
+
+/*	----------------------------------------------------------
 	Events
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 .page-template-template-events .project-item {
@@ -1455,6 +1463,9 @@ progress::-moz-progress-bar {
   display: inline-block;
   padding: 10px 0;
   margin-bottom: 15px; }
+
+.page-template-template-events-php .gce-month-title {
+  font-size: 1.25rem; }
 
 /*	----------------------------------------------------------
 	News Page
@@ -3032,7 +3043,7 @@ i span {
 
 .project-slides {
   margin: 0; }
-  .project-slides .project-item .entry-content p {
+  .project-slides .project-item .entry-content {
     font-size: 17px !important; }
 
 .home-gallery {

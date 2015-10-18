@@ -23,28 +23,33 @@
 	
 	<div id="main" class="site-main container_16">
 		<div class="inner">
-					<?php
-					$post = $wp_query->post;
-					$args = array( 'post_type' => 'project', 'posts_per_page' => 100,);
-					$loop = new WP_Query( $args );
-					while ( $loop->have_posts() ) : $loop->the_post();?>
-					<?php //print_r($loop); ?>
-					<div class="project-item">	
-						<div class="grid_4">	
-							<a href="<?php echo get_permalink();?>"><img src="<?php echo the_field('project_image', $post->ID);?>" width="100%"></a>
-						</div>											
-						<div class="grid_12">
-								<h2><a href="<?php echo get_permalink();?>"><?php the_title();?></a></h2>
-								<div class="entry-content">
-								<?php the_excerpt(); ?>
-								</div>
-								<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink();?>">Read More <i class="icon-angle-right"></i></a></div></div>
-						</div>		
-					</div>	
-					<?php endwhile; ?>
+
+				<?php 
+				
+				$posts = get_field('projects_order');			
+				if( $posts ): ?>
+
+					<?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
+						<div class="project-item">	
+							<div class="grid_4">	
+								<a href="<?php echo get_permalink( $p->ID );?>"><img src="<?php echo the_field('project_image', $p->ID);?>" width="100%"></a>
+							</div>											
+							<div class="grid_12">
+									<h2><a href="<?php echo get_permalink();?>"><?php echo $p->post_title;?></a></h2>
+									<div class="entry-content">
+									<?php echo wp_trim_words($p->post_content, $num_words = 85, $more = null); ?>
+									</div>
+									<br>
+									<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink( $p->ID );?>">Read More <i class="icon-angle-right"></i></a></div></div>
+							</div>		
+						</div>					    
+					<?php endforeach; ?>
+
+				<?php endif; ?>					
 			</div>
 	
 			<div class="clear"></div>
 		</div>
 	</div>
+	
 <?php get_footer(); ?>

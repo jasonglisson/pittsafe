@@ -48,31 +48,11 @@
 			<div class="clear"></div>
 		</div>
 	    <div class="entry-content">
-		    <?php echo do_shortcode('[gcal id="123"]'); ?>
 		    <?php echo do_shortcode('[gcal id="247"]'); ?>		    
 <!-- 			<iframe src="http://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=pittsafe%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="100%" height="350" frameborder="0" scrolling="no"></iframe> -->
 	    </div>
 	</div>	
 		<div class="clear"></div>
-<!--
-		<div class="grid_4 block first-home-widget-area">
-			<div class="widget-title">
-				<h3>Events</h3>
-				<div class="viewall fright">
-					<a href="/events/" class="radius" title="View all Events">VIEW ALL</a>
-				</div>
-				<div class="clear"></div>
-			</div>
-			<?php
-			$args = array( 'post_type' => 'event', 'posts_per_page' => 1 );
-		    $loop = new WP_Query( $args );
-			while ( $loop->have_posts() ) : $loop->the_post();?>
-				<img src="<?php echo get_field('event_header_image');?>" alt="<?php the_title();?>" width="100%"/>
-		    	<h2><a href="<?php echo get_permalink();?>"><?php the_title();?></a></h2>
-		    	<?php the_date('F d, Y', '<h4>', '</h4>'); ?>
-			<?php endwhile; ?>			
-		</div>
--->
 		<div class="grid_16 block second-home-widget-area">
 			<div class="widget-title">
 				<h3>Projects</h3>
@@ -83,25 +63,24 @@
 			</div>			
 				<ul class="project-slides">
 					<?php
-					$post = $wp_query->post;
-					$args = array( 'post_type' => 'project', 'posts_per_page' => 10 );
-					$loop = new WP_Query( $args );
-					while ( $loop->have_posts() ) : $loop->the_post();?>
-					<?php //print_r($loop); ?>
+					$posts = get_field('home_projects');?>
+					<?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
 					<li class="project-item">					
 						<div class="grid_12">
-								<h2><a href="<?php echo get_permalink();?>"><?php the_title();?></a></h2>
+								<h2><a href="<?php echo get_permalink($p);?>"><?php echo get_the_title($p);?></a></h2>
 								<div class="entry-content">
-								<?php my_excerpt(85); ?>
+									<?php echo wp_trim_words(get_post_field('post_content', $p), $num_words = 85, $more = null); ?>
 								</div>
-								<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink();?>">Read More <i class="icon-angle-right"></i></a></div></div>
+								<br>
+								<div class="flexslider-news"><div class="flex-button-red"><a class="radius" href="<?php echo get_permalink($p);?>">Read More <i class="icon-angle-right"></i></a></div></div>
 						</div>		
 						<div class="grid_4">	
-							<a href="<?php echo get_permalink();?>"><img src="<?php echo the_field('project_image', $post->ID);?>" width="100%"></a>
+							<a href="<?php echo get_permalink($p);?>"><img src="<?php echo the_field('project_image', $p);?>" width="100%"></a>
 						</div>	
 					</li>	
-					<?php endwhile; ?>	
-				</ul>		
+					<?php endforeach; ?>
+				</ul>
+						
 		</div>
 		<div class="grid_16 block second-home-widget-area">
 			<div class="home-mission">
