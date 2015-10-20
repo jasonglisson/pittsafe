@@ -12,6 +12,8 @@ jQuery(document).ready(function(){
 		jQuery(".WPlookLatestNews .image, iframe").fitVids();
 	});
 	
+	jQuery('.home .slide').delay(300).fadeIn(700);
+	
 	/* Slick slide */
 	jQuery('.slides').slick({
 		slidesToShow: 1,

@@ -2005,18 +2005,18 @@ display: block;
 #commentform .required{
 	color: red;
 }
-#submit {
+#submit, .wpcf7-submit {
 	cursor: pointer;
-	display: block;
-	font-size: 12px !important;
-	text-decoration: none;
-	color: #000;
-	padding: 7px 10px !important;
-	text-transform: uppercase;
+	color: #ffffff;
+    border: 1px solid #a2a2ad;
+    text-decoration: none;
+    padding: 7px 10px;
+    margin: 6px 0 0 0;
+    display: inline-block;
 }
 
-#submit:hover {
-	background: #3b3b3d;
+#submit:hover, .wpcf7-submit:hover {
+	background: #3e5ff2;
 	color: #fff;
 	border: 1px solid #3b3b3d;
 }
@@ -2860,6 +2860,10 @@ aside ul {
 /*	----------------------------------------------------------
 	Home page widgets
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.home .slide {
+ 	display: none;
+}
 
 .first-home-widget-area, .second-home-widget-area, .third-home-widget-area{
 	margin-bottom: 30px;
